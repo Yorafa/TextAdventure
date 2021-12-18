@@ -5,13 +5,12 @@ import org.junit.Test;
 
 import static entity.PokemonType.ELECTRICITY;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class BasePokemonTest {
-    BasePokemon basePokemon;
+    private BasePokemon basePokemon;
 
     @Before
-    public void setBasePokemon() {
+    public void setUp() {
         BasePokemonData bpd = new BasePokemonData(ELECTRICITY, 1, 1, 1, 1);
         basePokemon = new BasePokemon("test", bpd);
     }

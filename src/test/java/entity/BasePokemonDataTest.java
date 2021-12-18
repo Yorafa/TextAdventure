@@ -1,19 +1,12 @@
 package entity;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static entity.PokemonType.ELECTRICITY;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class BasePokemonDataTest {
-    BasePokemonData basePokemonData;
-
-    @Before
-    public void setBasePokemon() {
-        basePokemonData = new BasePokemonData(ELECTRICITY, 1, 1, 1, 1);
-    }
+    private final BasePokemonData basePokemonData = new BasePokemonData(ELECTRICITY, 1, 1, 1, 1);
 
     @Test(timeout = 50)
     public void testGetPokemonType() {

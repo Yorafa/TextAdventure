@@ -1,13 +1,14 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * The template information of a pokemon
  */
 public class BasePokemon implements Serializable {
-    protected String name;
-    protected BasePokemonData basePokemonData;
+    protected final String name;
+    protected final BasePokemonData basePokemonData;
 
     /**
      * Construct a BasePokemon, giving them the
@@ -15,8 +16,8 @@ public class BasePokemon implements Serializable {
      *
      * @param name            BasePokemon's name
      * @param basePokemonData BasePokemon's data
-     *
-     * The relative classes
+     *                        <p>
+     *                        The relative classes
      * @see BasePokemonData
      */
 
@@ -94,14 +95,29 @@ public class BasePokemon implements Serializable {
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        else {
+        if (o == this) {
+            return true;
+        }
+
+        if (o.getClass() != this.getClass()) {
+            return false;
+        } else {
             BasePokemon basepokemon = (BasePokemon) o;
             return this.getMaxHitPoint() == basepokemon.getMaxHitPoint()
                     && this.getAttackPoint() == basepokemon.getAttackPoint()
                     && this.getDefencePoint() == basepokemon.getDefencePoint()
                     && this.getSpeed() == basepokemon.getSpeed();
         }
+    }
+
+    /**
+     * the hashcode method
+     *
+     * @return hashCode of this BasePokemon
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getBasePokemonData());
     }
 }
 

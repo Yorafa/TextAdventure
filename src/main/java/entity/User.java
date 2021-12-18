@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * the player's information
@@ -8,14 +9,6 @@ import java.io.Serializable;
 public class User implements Serializable {
     private String username;
     private String password;
-
-    /**
-     * Construct a User with all null value
-     */
-    public User() {
-        this.username = null;
-        this.password = null;
-    }
 
     /**
      * Construct a User, given them the given username and password
@@ -30,6 +23,7 @@ public class User implements Serializable {
 
     /**
      * the getter method of username
+     *
      * @return the username player
      */
     public String getUsername() {
@@ -38,6 +32,7 @@ public class User implements Serializable {
 
     /**
      * the setter method of username
+     *
      * @param username the given username from player
      */
     public void setUsername(String username) {
@@ -46,6 +41,7 @@ public class User implements Serializable {
 
     /**
      * the getter method of password
+     *
      * @return the password player use to set
      */
     public String getPassword() {
@@ -54,6 +50,7 @@ public class User implements Serializable {
 
     /**
      * the setter method of password
+     *
      * @param password the given password from player
      */
     public void setPassword(String password) {
@@ -61,7 +58,6 @@ public class User implements Serializable {
     }
 
     /**
-     *
      * @param o the object use compare
      * @return true if the object share all the data the same
      */
@@ -70,11 +66,21 @@ public class User implements Serializable {
         if (o == this) {
             return true;
         }
-        if (o.getClass() != this.getClass()){
+        if (o.getClass() != this.getClass()) {
             return false;
         }
         User u = (User) o;
         return u.getUsername().equals(this.getUsername())
                 && u.getPassword().equals(this.getPassword());
+    }
+
+    /**
+     * the hashcode method
+     *
+     * @return hashCode of this User
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUsername(), getPassword());
     }
 }

@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * The map of game
  */
+@SuppressWarnings("unused")
 public class Pmap implements Serializable {
     private String mapName;
     private List<String> pokemons;
@@ -14,6 +15,7 @@ public class Pmap implements Serializable {
 
     /**
      * the getter method of mapName
+     *
      * @return the name of this map
      */
     public String getMapName() {
@@ -22,6 +24,7 @@ public class Pmap implements Serializable {
 
     /**
      * the getter method of pokemons
+     *
      * @return a list of Pokemon's name from this map
      */
     public List<String> getPokemons() {
@@ -30,6 +33,7 @@ public class Pmap implements Serializable {
 
     /**
      * the getter method of probabilities
+     *
      * @return a list of integer that represent of pokemon probability from this map
      */
     public List<Integer> getProbabilities() {
@@ -38,9 +42,20 @@ public class Pmap implements Serializable {
 
     /**
      * the getter method of levels
+     *
      * @return the level range that pokemon from this map could be
      */
     public List<Integer> getLevels() {
         return levels;
+    }
+
+    /**
+     * the representation showing on data
+     *
+     * @return the map of name
+     */
+    @Override
+    public String toString() {
+        return mapName;
     }
 }
