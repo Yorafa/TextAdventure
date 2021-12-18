@@ -2,7 +2,7 @@ package gateway;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import usecase_data.IJsonReader;
+import adapter.IJsonReader;
 
 import java.io.IOException;
 import java.io.Reader;

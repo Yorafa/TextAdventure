@@ -1,4 +1,4 @@
-package gateway;
+package usecase.map;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -16,14 +16,13 @@ import java.util.List;
 /**
  * the data access object in charge of map
  */
-public class MapJsonReader implements IJsonReader<List<Pmap>> {
+public class MapJsonReaderForTest implements IJsonReader<List<Pmap>> {
     /**
      * @return a list of map
      * @throws IOException file may not exist
      */
     public List<Pmap> read() throws IOException {
-        ConfigReader configReader = new ConfigReader();
-        String filePath = configReader.getMapPath();
+        String filePath = "test_data/AllMapData.json";
         Reader reader = Files.newBufferedReader(Paths.get(filePath));
         Gson gson = new Gson();
         Type type = new TypeToken<ArrayList<Pmap>>() {

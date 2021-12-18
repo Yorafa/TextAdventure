@@ -1,8 +1,8 @@
 # Text Adventure
 
-- This is a game build based on my csc207 group project,
+- This is a game build based on my csc207(UofT) group project ,
   - Because the design concepts with group mate is different, so fork out and do it myself
-  - see the original [game](https://github.com/CSC207-UofT/course-project-jerry-text-adventure)
+  - see the [original game](https://github.com/CSC207-UofT/course-project-jerry-text-adventure)
 
 Introducing
 
@@ -12,14 +12,16 @@ Introducing
 
 ## Release
 
+- V1 [Download](https://github.com/CSC207-UofT/course-project-jerry-text-adventure/releases/download/TextAdventureBetaV1.0.0/TextAdventure.zip)
+- Source Code [Download](https://github.com/CSC207-UofT/course-project-jerry-text-adventure/archive/refs/heads/main.zip)
 
 ## Run
 
 1. Download one of releases
 2. double click xx.jar if you can
-3. if you can't, open terminal at that file path and then type: `java -jar .\xx.jar`
-4. Notice: `xx` is the release you download, either `TextAdventure` or `PokemonWorld`
-5. Or download source code and use your IDE to open it
+  - open `run.bat` (Windows system)
+3. if you can't, open terminal at that file path and then type: `java -jar .\TextAdventure.jar`
+4. Or download source code and use your IDE to open it
 
 ### Notice:
 

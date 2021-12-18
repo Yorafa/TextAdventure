@@ -1,11 +1,11 @@
 package driver;
 
-import gui.TextAdventureFrame;
+import controller.TextAdventureFrame;
 
 public class TextAdventure {
 
     public static void main(String[] args) {
-        TextAdventureFrame frame = new TextAdventureFrame(new GuiDriver());
+        TextAdventureFrame frame = new TextAdventureFrame(new Driver());
         frame.initialize();
     }
 }
