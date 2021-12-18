@@ -1,5 +1,6 @@
-package gateway;
+package usecase.user;
 
+import gateway.ReadWriter;
 import adapter.IReadWriter;
 
 import java.io.IOException;
@@ -7,7 +8,7 @@ import java.io.IOException;
 /**
  * the data access object of user
  */
-public class UserReadWriter implements IReadWriter {
+public class UserReadWriterForTest implements IReadWriter {
     private final ReadWriter rw = new ReadWriter();
 
     /**
@@ -17,8 +18,7 @@ public class UserReadWriter implements IReadWriter {
      */
     @Override
     public Object read() throws IOException, ClassNotFoundException {
-        ConfigReader configReader = new ConfigReader();
-        String filePath = configReader.getUserPath();
+        String filePath = "test_data/UserInfo.ser";
         return rw.read(filePath);
     }
 
@@ -28,8 +28,7 @@ public class UserReadWriter implements IReadWriter {
      */
     @Override
     public void write(Object o) throws IOException {
-        ConfigReader configReader = new ConfigReader();
-        String filePath = configReader.getUserPath();
+        String filePath = "test_data/UserInfo.ser";
         rw.write(filePath, o);
     }
 }

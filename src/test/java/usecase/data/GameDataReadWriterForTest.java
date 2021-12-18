@@ -1,6 +1,7 @@
-package gateway;
+package usecase.data;
 
 import entity.GameData;
+import gateway.ReadWriter;
 import adapter.IReadWriter;
 
 import java.io.IOException;
@@ -8,18 +9,8 @@ import java.io.IOException;
 /**
  * the data access object in charge of gameData
  */
-public class GameDataReadWriter implements IReadWriter {
-    private final String username;
+public class GameDataReadWriterForTest implements IReadWriter {
     private final ReadWriter rw = new ReadWriter();
-
-    /**
-     * Construct a GameDataReadWriter, given the username
-     *
-     * @param username the player's username
-     */
-    public GameDataReadWriter(String username) {
-        this.username = username;
-    }
 
     /**
      * @return the saved game data
@@ -28,8 +19,7 @@ public class GameDataReadWriter implements IReadWriter {
      */
     @Override
     public GameData read() throws IOException, ClassNotFoundException {
-        ConfigReader configReader = new ConfigReader();
-        String filePath = configReader.getGamePath() + username + ".ser";
+        String filePath = "test_data/game/testuser.ser";
         return (GameData) rw.read(filePath);
     }
 
@@ -39,8 +29,7 @@ public class GameDataReadWriter implements IReadWriter {
      */
     @Override
     public void write(Object o) throws IOException {
-        ConfigReader configReader = new ConfigReader();
-        String filePath = configReader.getGamePath() + username + ".ser";
+        String filePath = "test_data/game/testuser.ser";
         rw.write(filePath, o);
     }
 }
